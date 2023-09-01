@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #head1 {
+        display: flex;
+        padding: 10px;
+        height: 250px;
+      }
+
+      .img1 {
+        width: 250px;
+        height: 200px;
+        padding: 5px;
+      }
+      .name {
+        width: 900px;
+        height: 200px;
+        padding: 40px;
+        align-content: center;
+        font-size: 30px;
+      }
+      body {
+        border: 3px solid black;
+        padding: 10px;
+        margin: 10px;
+        display: grid;
+        row-gap: 10px;
+        grid-auto-flow: row;
+      }
+      .para1 {
+        width: 1100px;
+      }
+      .footer {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr;
+        line-height: 3px solid black;
+      }
+      .leftside {
+        padding: 5px;
+        margin: 5px;
+        left: 0;
+        /*  
+            position: absolute;
+            left: 60%;
+            margin-left: 3px;
+            top: 400;
+            */
+      }
+      .middleside {
+        padding: 20px;
+        border-left: 3px solid black;
+        height: 130px;
+      }
+      .rightside {
+        padding: 10px;
+        border-left: 3px solid black;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+      }
+      .vl {
+        border-left: 6px solid rgb(3, 3, 3);
+        height: 50px;
+        position: absolute;
+      }
+
+      .popup-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .popup {
+        background-color: rgb(248, 243, 243);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px black;
+        visibility: visible;
+      }
+      .popup label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .popup input {
+        width: 100%;
+        padding: 10px;
+        border: 1px rgb(86, 182, 185);
+        border-radius: 3px;
+        background-color: aquamarine;
+      }
+      .popup button {
+        background-color: rgb(232, 238, 240);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+      }
+      .editButton{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="head">
+      <div id="head1">
+        <img class="img1" src="c:\Users\Admin\Documents\SQL\sasi.jpg" />
+
+        <div class="name">
+          <hr />
+          <h1 class="style1">SASI</h1>
+          <h1 class="style2">GANESAN</h1>
+          <p class="pro">Fresher</p>
+          <button type="editButton" value="more">Enter more details</button>
+        </div>
+      </div>
+    </div>
+
+    <!----------popup form----->
+
+    <div class="popup-container" id="popup-container">
+      <div class="popup" id="popup">
+        <h2>information</h2>
+        <br />
+        <label for="fname">firstname</label>
+        <input type="text" id="fname" />
+        <label for="lname">lastname</label>
+        <input type="text" id="lname" />
+        <label for="profession">profession</label>
+        <input type="text" id="profession" />
+        <button id="saveButton">Save</button>
+      </div>
+    </div>
+
+    <div class="objective">
+      <br />
+      <hr />
+      <h2>OBJECTIVE</h2>
+      <br />
+      <p class="para1">
+        Seeking a position to ulitize my skills and abilities in the industry
+        that offers. Professional growth while being resourceful, innovative,
+        and flexible, to work in a challenging and creative environment and
+        effectively contribute towards the goals of the organization
+      </p>
+    </div>
+    <div class="education">
+      <hr />
+      <br />
+      <h2>EDUCATION</h2>
+      <br />
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;2021-2023
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>M. Sc COMPUTER SCIENCE</b>
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp; St.joseph's College (Autonomous), Trichy.
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;2018-2021
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>B. Sc COMPUTER SCIENCE</b>
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp; Periyar E.V.R. College (Autonomous), Trichy.
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;2017-2018
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>HSC</b>
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp; Government Girls Higher Secondary School,
+        Mannachanallur.
+      </p>
+    </div>
+    <br />
+    <hr />
+    <div class="footer">
+      <div class="leftside">
+        <h2>TECHNICAL SKILLS</h2>
+        <br />
+        <ul>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </div>
+      <div class="middleside">
+        <h2>SOFT SKILLS</h2>
+        <br />
+        <ul>
+          <li>communication</li>
+          <li>Team Player</li>
+          <li>Leadership</li>
+          <li>Time Management</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+      <div class="rightside">
+        <div class="v1"></div>
+        <h2>CONTACT</h2>
+        <br />
+
+        <p>
+          <img src="e:\Grid\telephone-receiver-material-2.svg" /> +91 8946013961
+        </p>
+        <p><img src="e:\Grid\email.svg" /> sasiganesan2001@gmail.com</p>
+        <p><img src="e:\Grid\linkedin.svg" /> linkedin.com/in/sasi-g</p>
+        <p><img src="e:\Grid\location-pin.svg" /> Trichy</p>
+      </div>
+    </div>
+    <br />
+
+    <script src="sasiresume.js"></script>
+  </body>
+</html>
