@@ -34,9 +34,12 @@
         border: 3px solid black;
         padding: 10px;
         margin: 10px;
+        /*
         display: grid;
+        position: fixed;
         row-gap: 10px;
         grid-auto-flow: row;
+        */
       }
       .para1 {
         width: 1100px;
@@ -76,49 +79,94 @@
         height: 50px;
         position: absolute;
       }
-
-      .popup-container {
-        display: none;
-        position: fixed;
+      /*
+      .popup-container{
+        display: flex;
+        position: absolute;
+        padding: 30px;
+        font-size: 15px;
         top: 0;
         left: 0;
+        margin: 20vh auto 0;
         width: 50%;
-        height: 50%;
-        background-color: rgba(0, 0, 0, 0.5);
         justify-content: center;
         align-items: center;
+        
+        height: 50%;
+        background-color: rgba(241, 237, 237, 0.5);
         z-index: 1000;
+         }
+        */
+
+      #popup {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: rgb(156, 122, 219);
+        color: white;
+        margin: 20vh auto 0;
+        border-radius: 5px;
+        border: solid black;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 15px;
+        width: 30%;
+        border-color: aliceblue;
+        align-content: center;
       }
-      .popup {
-        background-color: rgb(248, 243, 243);
-        padding: 20px;
+      /* 
+        margin: 10px 0px;
+        width: 50%;
+        background-color: rgb(92, 39, 182);
+        padding: 30px;
+        cursor: pointer;
+        font-size: 15px;
         border-radius: 10px;
         box-shadow: 0 0 10px black;
-        visibility: visible;
-      }
-      .popup label {
+        */
+
+      #popup label {
         display: block;
         margin-bottom: 5px;
       }
-      .popup input {
-        width: 100%;
+      #popup input {
+        display: block;
+        width: 90%;
         padding: 10px;
         border: 1px rgb(86, 182, 185);
         border-radius: 3px;
         background-color: aquamarine;
       }
-      .popup button {
+      #popup button {
         background-color: rgb(232, 238, 240);
-        color: white;
+        color: rgb(221, 241, 38);
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
         position: relative;
       }
-      .editButton{
+      #editButton,
+      #saveButton {
         cursor: pointer;
+        margin-top: 5px;
       }
+
+      /*
+        @media screen and(min-width: 801px)
+       {
+        body,
+        head #head1,
+        .name,
+        .pro,
+        .objective,
+        .footer {
+          padding: 20px;
+          width: 30%;
+          float: left;
+        }
+         }
+        */
     </style>
   </head>
   <body>
@@ -128,27 +176,34 @@
 
         <div class="name">
           <hr />
-          <h1 class="style1">SASI</h1>
-          <h1 class="style2">GANESAN</h1>
-          <p class="pro">Fresher</p>
-          <button type="editButton" value="more">Enter more details</button>
+          <h1 id="style1">SASI</h1>
+          <h1 id="style2">GANESAN</h1>
+          <p id="pro">Fresher</p>
+          <input
+            type="button"
+            id="editButton"
+            onclick="addEventListener()"
+            value="Enter more details"
+          />
         </div>
-      </div>
-    </div>
 
-    <!----------popup form----->
-
-    <div class="popup-container" id="popup-container">
-      <div class="popup" id="popup">
-        <h2>information</h2>
-        <br />
-        <label for="fname">firstname</label>
-        <input type="text" id="fname" />
-        <label for="lname">lastname</label>
-        <input type="text" id="lname" />
-        <label for="profession">profession</label>
-        <input type="text" id="profession" />
-        <button id="saveButton">Save</button>
+        <!----------popup form----->
+        <div class="popup" id="popup">
+          <h2>Information</h2>
+          <br />
+          <label for="fname">firstname</label>
+          <input type="text" id="fname" />
+          <label for="lname">lastname</label>
+          <input type="text" id="lname" />
+          <label for="profession">profession</label>
+          <input type="text" id="profession" />
+          <input
+            type="button"
+            onclick="addEventListener()"
+            id="saveButton"
+            value="Save"
+          />
+        </div>
       </div>
     </div>
 
@@ -163,6 +218,7 @@
         and flexible, to work in a challenging and creative environment and
         effectively contribute towards the goals of the organization
       </p>
+      <br />
     </div>
     <div class="education">
       <hr />
